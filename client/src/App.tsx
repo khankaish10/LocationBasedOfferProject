@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Discover from "./components/Discover";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-
-      <h1>Vite + React</h1>
-
-    </>
-  )
+    <div style={{ padding: "1rem" }}>
+      <h1>Offers Platform</h1>
+      <Discover />
+    </div>
+  );
 }
 
-export default App
+export default App;
