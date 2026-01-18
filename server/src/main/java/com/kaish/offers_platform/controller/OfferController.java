@@ -1,6 +1,7 @@
 package com.kaish.offers_platform.controller;
 
 
+import com.kaish.offers_platform.dto.DiscoverStoreDTO;
 import com.kaish.offers_platform.dto.OfferResponseDTO;
 import com.kaish.offers_platform.entity.Offer;
 import com.kaish.offers_platform.service.OfferService;
@@ -40,5 +41,22 @@ public class OfferController {
         return offerService.getOffers(city, storeId, page, size, sortBy, direction);
     }
 
+    @GetMapping("/discover")
+    public List<DiscoverStoreDTO> discoverOffers(
+            @RequestParam String city,
+            @RequestParam(defaultValue = "5") int limit
+    ) {
+        return offerService.discoverOffers(city, limit);
+    }
+
+    @GetMapping("/search")
+    public List<OfferResponseDTO> searchOffers(@RequestParam String keyword) {
+        return offerService.searchOffers(keyword);
+    }
+
+    @GetMapping("/active")
+    public List<OfferResponseDTO> getActiveOffers(@RequestParam(required = false) String city) {
+        return offerService.getActiveOffers(city);
+    }
 
 }

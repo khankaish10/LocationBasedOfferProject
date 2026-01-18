@@ -15,6 +15,26 @@ public class OfferResponseDTO {
     private String storeName;
     private String city;
 
+    public OfferResponseDTO(Long id,
+                            String title,
+                            String description,
+                            double discount,
+                            LocalDate validFrom,
+                            LocalDate validTo,
+                            Long storeId,
+                            String storeName,
+                            String city) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.discount = discount;
+        this.validFrom = validFrom;
+        this.validTo = validTo;
+        this.storeId = storeId;
+        this.storeName = storeName;
+        this.city = city;
+    }
+
     public Long getId() {
         return id;
     }
